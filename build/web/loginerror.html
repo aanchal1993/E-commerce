@@ -1,0 +1,84 @@
+
+<html>
+    <head>
+        <title>Login Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="admin.css" rel="stylesheet" type="text/css">
+        <script src="jquery-1.12.3.min.js"></script>
+        <style>
+            body
+            {
+
+                background-image:url("imgs/main_BG.jpg") ;
+                //background:url(../images/main_BG.jpg) left repeat; 
+                font-family:arial; 
+                font-size:12px; 
+                color:#ffffff;
+                text-align:center;
+            }
+            
+            .abc{
+                 background-image:url("imgs/login_btn.png");
+                 height:30px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div align="center">
+
+            <form id="loginform" name="loginform" action="validate.jsp" method="post" class="login_form" >
+                <div>
+                    <img src="imgs/form_title.gif">
+                </div>
+                <!-- Clear -->
+                <p>&nbsp;
+                </p>
+                <!-- Clear -->
+
+                <!-- User Name -->
+                <p>
+                    *User Name:&nbsp;&nbsp;
+                    <input type="text" name ="username" id="username" required="required" placeholder="enter your username" size="30">
+                </p>
+                <!-- User Name -->
+
+                <!-- Clear -->
+                <p>&nbsp;
+                </p>
+                <!-- Clear -->
+
+                <!-- Password -->
+                <p style="margin-left:8px;">
+                    *Password:&nbsp;&nbsp;
+                    <input type="password" name ="password" id="password" required="required" placeholder="enter your password" size="30">
+                </p>
+                <!-- Password -->
+
+                <!-- Clear -->
+                <p>&nbsp;
+                </p>
+                <!-- Clear -->
+
+                <p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" value="admin"  name ="r1" checked> Admin &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" value="merchant" name ="r1">Merchant
+                </p>
+
+                <!-- Clear -->
+                <p>&nbsp;
+                </p>
+                <!-- Clear -->
+
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <!--<img src="imgs/login_btn.png">-->
+                    <input type="submit" value=" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" id="x1" class="abc"></p>    
+                <div id="p1">Invalid Login! Try Again</div>
+
+            </form>
+        </div>
+    </body>
+
+</html>

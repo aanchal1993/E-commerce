@@ -1,0 +1,76 @@
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="admin.css" rel="stylesheet" type="text/css">
+        <script src="jquery.validate.js" type="text/javascript"></script>
+        <script src="jquery-1.12.3.min.js"></script>
+        <script>
+            function abc() {
+
+                var username = $("#username").val();
+                var password = $("#password").val();
+
+                theUrl = 'ajaxvalidate.jsp';
+                /*************************/
+                var chk;
+                if (document.f1.r1[0].checked)
+                {
+                    chk = document.f1.r1[0].value;
+                    alert(chk);
+                }
+
+                else{
+                    chk = document.f1.r1[1].value;
+                    alert(chk);
+                }
+                    
+                /*********************************/
+                $.ajax({
+                    type: "GET",
+                    url: theUrl,
+                    data: "username=" + username + "&password=" + password + "&chk="+chk,
+                    processData: false,
+                    async: false,
+                    success: function(result) {
+                        var q = $.trim(result);
+                        alert(q);
+                        if(q=="1")
+                            window.open("admin.jsp");
+                        else if(q=="2")
+                            {
+                            window.open("merchant.jsp");
+                            }
+                        else
+                            {
+                            var chg="Invalid Login";
+                            document.getElementById("p1").innerHTML =chg;
+                            }
+                    }
+                });
+            }
+
+
+        </script>
+    </head>
+    <body>
+        <form action="ajaxvalidate.jsp" method="post" name="f1">
+            <p>
+                Username:<br>
+                <input type="text" name ="username" id="username">
+            </p>
+            <p>
+                Password:<br>
+                <input type="password" name ="password" id="password">
+            </p>
+            <p>
+                <input type="radio" value="admin"  name ="r1" checked >Admin
+                <input type="radio" value="merchant" name ="r1" >Merchant
+            </p>
+            <p><input type="button" value="Login" id="x1" onclick="abc()"></p>    
+            <div id="p1"></div>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,103 @@
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="admin.css" rel="stylesheet" type="text/css">
+        <script src="jquery.validate.js" type="text/javascript"></script>
+        <script src="jquery-1.12.3.min.js"></script>
+        <script>
+
+            $(document).ready(function()
+            {
+            var urlx;
+                    $("#form1").validate(
+            {
+            submitHandler:function(form)
+            {
+            var param = $(form).serialize();
+                    $.ajax({
+                    url:urlx,
+                            type:"post",
+                            data:param,
+                            success:function(result)
+                            {
+                            $("#k1").html(result);
+                            }
+
+                    });
+            }
+            }
+            );
+                    $(document).ready(
+                    function()
+                    {
+
+                    $("#x1").click(
+                            function()
+                            {
+
+                            var username = $("#username").val();
+                                    var password = $("#password").val();
+                                    var chk;
+                                    if (document.f1.r1[0].checked)
+                            {
+                            chk = document.f1.r1[0].value;
+                                    alert(chk);
+                            }
+
+                            else
+                                    chk = document.f1.r1[1].value;
+                                    var a = document.getElementById(f1);
+                                    if (chk == "admin"){
+                            alert("executed");
+                                    document.f1.submit();
+                                    a.action = "admin.jsp";
+                            }
+                            else
+                            {
+                            document.f1.submit();
+                                    a.action = "merchant.jsp";
+                            }
+                            $.ajax(
+                            {
+
+                            type: "post",
+                                    url: "ajaxvalidate.jsp",
+                                    data: "username=" + username + "&password=" + password + "r1=" + chk,
+                                    async: false,
+                                    success: function(result)
+                                    {
+                                    $("#p1").html(result);
+                                            var q = $.trim(result);
+                                            alert(q);
+                                            if (q == "Valid login")
+                                            window.open("admin.jsp", "_self");
+                                    }
+
+                            });
+                            });
+                    });
+        </script>
+    </head>
+    <body>
+        <form action="ajaxvalidate.jsp" method="post" name="f1">
+            <p>
+                Username:<br>
+                <input type="text" value="admin" name ="username" id="username">
+            </p>
+            <p>
+                Password:<br>
+                <input type="password" value="admin" name ="password" id="password">
+            </p>
+            <p>
+                <input type="radio" value="admin"  name ="r1" checked >Admin
+                <input type="radio" value="users" name ="r1" >Users
+                <input type="radio" value="merchant" name ="r1" >Merchant
+            </p>
+            <p><input type="button" value="Login" id="x1"></p>    
+            <div id="p1"></div>
+        </form>
+    </body>
+</html>
