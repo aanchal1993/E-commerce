@@ -1,14 +1,16 @@
 # E-commerce
 Java based Ecommerce website 
 
-Technologies Used: Java, HTML, JavaScript, Servlets, JSP, Oracle
+1) Ecommerce is any method of using electronic communications and computer technology to conduct business.
 
-Tools Used: Net Beans, Apache Tomcat, Dreamweaver
+2) Technologies Used: Java, HTML, JavaScript, Servlets, JSP, Oracle 
 
-System features included:
+3) Tools Used: Net Beans, Apache Tomcat, Dreamweaver
 
-1) Admin Module: The admin is provided with a username and password. After successfully login, he can perform certain tasks. The tasks are: Add/Modify/Delete/Search on Categories, Subcategories, Brands and Merchants.
+4) System features included:
 
-2) Merchant Module: The merchant is allowed to add, modify, delete and search the products. He can perform these tasks only on the products which are added by him. He is not authorized to view the products added by another merchant.
+i) Admin Module: The admin is provided with a username and password. After successfully login, he can perform certain tasks. The tasks are: Add/Modify/Delete/Search on Categories, Subcategories, Brands and Merchants.
 
-3) User Module: This module is further subdivided into following modules: User Registration, Login, View Products, Post Queries, Add to Cart, Shipment Address, Track Order and View all Orders. 
+ii) Merchant Module: The merchant is allowed to add, modify, delete and search the products. He can perform these tasks only on the products which are added by him. He is not authorized to view the products added by other merchant’s.
+
+iii) User Module: This module is further subdivided into following modules: User Registration, Login, View Products, Post Queries, Add to Cart, Shipment Address, Track Order and View all Orders.
